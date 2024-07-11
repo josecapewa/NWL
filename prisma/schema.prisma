@@ -15,5 +15,5 @@ model Trip {
   is_confirmed Boolean  @default(false)
   created_at   DateTime @default(now())
 
-  @@map("trips")
+  @@map("trip")
 }
