@@ -14,7 +14,7 @@ export async function createTrip(app: FastifyInstance){
                 starts_at: z.coerce.date(),
                 ends_at: z.coerce.date(),
                 owner_name: z.string(),
-                owner_email: z.string().email(),
+                owner_email: z.string().email()
             })
         }
         }, async (request) => {
@@ -33,6 +33,15 @@ export async function createTrip(app: FastifyInstance){
                 destination,
                 starts_at,
                 ends_at,
+                participants: {
+                    create: {
+                        name: owner_name,
+                        email: owner_email,
+                        is_owner: true,
+                        is_confirmed: true
+                    }
+                
+                }
             }
         });
 
