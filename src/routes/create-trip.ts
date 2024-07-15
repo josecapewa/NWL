@@ -61,7 +61,7 @@ export async function createTrip(app: FastifyInstance){
         const formattedStartDate = dayjs(starts_at).format("LL");
         const formattedEndDate = dayjs(ends_at).format("LL");
 
-        const confirmation_link = `http://special-spork-qr7grgq9wpvc665g-3333.app.github.dev/${trip.id}/confirm}`;
+        const confirmation_link = `http://special-spork-qr7grgq9wpvc665g-3333.app.github.dev/trips/${trip.id}/confirm`;
 
         const mail = await getMailClient();
 
